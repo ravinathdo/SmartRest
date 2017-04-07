@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 7, 2017, 1:17:02 PM
+    Author     : 001343
+*/
+.titleStyle{
+    color: #f78e21;
+    font-weight: bold;
+}
+
+.msgCenter{
+    width: 200px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+.mandoField{
+    color: red;
+}

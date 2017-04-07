@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>Restaurant</title>
+    <title>E-Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -28,13 +28,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="cart-info">
-                     
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="main-header" style="background-color:#F93">
+        <div id="main-header">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -44,17 +44,20 @@
                     </div>
                     <div class="col-md-6">
                         <div class="main-menu">
-                             <?php
-                             if(isset($_SESSION['user_role'])){
-								  if ($_SESSION['user_role'] == 'CUS')
-                                include './menu-customer.php';
-								 if ($_SESSION['user_role'] == 'ADM')
-                                include './menu-admin.php';
-								 }else{
-									 	 include './menu-visitor.php';
-									 }
+                            <?php
+                            if (isset($_SESSION['user_role'])) {
+                                if ($_SESSION['user_role'] == 'CUS')
+                                    include './menu-customer.php';
+                                if ($_SESSION['user_role'] == 'ADM')
+                                    include './menu-admin.php';
+                            }else {
+                                include './menu-visitor.php';
+                            }
                             ?>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+
                     </div>
                 </div>
             </div>
@@ -62,36 +65,8 @@
     </header>
 
     <div id="slider">
-        <div class="flexslider">
-            <ul class="slides">
-                <li>
-                    <div class="slider-caption">
-                        <h1>Smart Restaruant</h1>
-                       
-                        <!--<a href="single-post.html">Shop Now</a>-->
-                    </div>
-                    <img src="images/1.jpg" alt="" />
-                </li>
-                <!--<li>
-                    <div class="slider-caption">
-                        <h1>SMART Parking</h1>
-                        <p>Nulla id iaculis ligula. Vivamus mattis quam eget urna tincidunt consequat. Nullam 
-                            <br><br>consectetur tempor neque vitae iaculis. Aliquam erat volutpat.</p>
-                        <a href="single-post.html">More Details</a>
-                    </div>
-                    <img src="images/slide2.jpg" alt="" />
-                </li>
-                <li>
-                    <div class="slider-caption">
-                        <h1>SMART Serve</h1>
-                        <p>Maecenas fermentum est ut elementum vulputate. Ut vel consequat urna. Ut aliquet 
-                            <br><br>ornare massa, quis dapibus quam condimentum id.</p>
-                        <a href="single-post.html">Get Ready</a>
-                    </div>
-                    <img src="images/slide3.jpg" alt="" />
-                </li>-->
-            </ul>
-        </div>
+
+
     </div>
 
 
@@ -99,10 +74,112 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="heading-section">
-                        <h2>WE ARE SMART</h2>
-                        <img src="images/under-heading.png" alt="" >
-                    </div>
+                    <h4 class="titleStyle">Customer Registration</h4>
+                    <form name="form1" method="post" action="">
+                        <span class="mandoField">*</span> fields are required
+                        <table width="50%" border="0" cellspacing="2" cellpadding="2">
+                            <tr>
+                                <td width="34%" align="right"><strong>First Name</strong></td>
+                                <td width="2%"><span class="mandoField">*</span></td>
+                                <td width="64%"><input type="text" name="firstname" id="firstname"  class="form-control" required></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Last Name</strong></td>
+                                <td>&nbsp;</td>
+                                <td><input type="text" name="lastname" id="lastname"  class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Username</strong></td>
+                                <td><span class="mandoField">*</span></td>
+                                <td><input type="text" name="username" id="username"  class="form-control" required></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Password</strong></td>
+                                <td><span class="mandoField">*</span></td>
+                                <td><input type="password" name="password" id="password"  class="form-control" required></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Retype Password</strong></td>
+                                <td>&nbsp;</td>
+                                <td><input type="password" name="repassword" id="repassword"  class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Telephone</strong></td>
+                                <td>&nbsp;</td>
+                                <td><input type="text" name="telephone" id="telephone"  class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><strong>Email</strong></td>
+                                <td><span class="mandoField">*</span></td>
+                                <td><input type="text" name="email" id="email"  class="form-control" required></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><input type="submit" name="btnReg" value="Register" class="btn btn-warning"/>&nbsp;
+                                    <input type="reset"  class="btn btn-default"/></td>
+                            </tr>
+                        </table>
+                    </form>
+
+
+
+                    <?php
+                    if (isset($_POST['btnReg'])) {
+                        include './_function.php';
+
+                        //validation 
+                        if ($_POST['password'] != $_POST['repassword']) {
+                          ?>
+                                <div class="msgCenter">
+                                    <span class="btn btn-danger">Password mismatch,please retry</span>
+                                </div><br>
+                                <?php
+                        } else {
+                            $conn = getDBConnection();
+                            // Check connection
+                            if (!$conn) {
+                                die("Connection failed: " . mysqli_connect_error());
+                            }
+
+                            $sql = " INSERT INTO user
+            (`firstname`,
+             `lastname`,
+             `username`,
+             `password`,
+             `email`,
+             `telephone`,
+             `role`)
+VALUES ('" . $_POST['firstname'] . "',
+        '" . $_POST['lastname'] . "',
+        '" . $_POST['username'] . "',
+        PASSWORD('" . $_POST['password'] . "'),
+        '" . $_POST['email'] . "',
+        '" . $_POST['telephone'] . "',
+        'CUS'); ";
+
+                            // echo $sql;
+                            if (mysqli_query($conn, $sql)) {
+                                ?>
+                                <div class="msgCenter">
+                                    <span class="btn btn-success">Registration successfully, please <a href="login.php">login</a> </span>
+                                </div><br>
+                                <?php
+                            } else {
+                                ?>
+                                <div class="msgCenter">
+                                    <span class="btn btn-danger">Duplicate or invalid entry found, please try again</span>
+                                </div><br>
+                                <?php
+                                echo "";
+                            }
+
+                            mysqli_close($conn);
+                        }
+                    }
+                    ?>  
+
+
                 </div>
             </div>
             <div class="row">
@@ -129,7 +206,7 @@
                         <div class="icon">
                             <i class="fa fa-street-view"></i>
                         </div>
-                        <h4>Smart  waiters</h4>
+                        <h4>Smart to waiters</h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>
@@ -302,7 +379,7 @@
     </div>
 
     <footer>
-       <?php include './footer.php';?>
+
     </footer>
 
 
@@ -310,6 +387,13 @@
     <script src="js/vendor/jquery.gmap3.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+
+    <style type="text/css">
+        table td{
+
+        }
+    </style>
 
 </body>
 </html>

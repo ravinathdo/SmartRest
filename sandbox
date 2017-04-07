@@ -1,0 +1,19 @@
+ SELECT *  FROM slot_reservation WHERE NOW() BETWEEN from_time AND to_time
+ AND STATUS = 'BUK' AND slotno = '1'
+ 
+ 
+  SELECT * FROM slot_reservation WHERE ('2017-02-23 07:19' BETWEEN from_time AND to_time)
+ OR ( '2017-02-23 08:20' BETWEEN from_time AND to_time) AND STATUS = 'BUK' AND slotno = '1'
+
+
+f78e21 - orange
+
+
+<div class="msgCenter">
+<span class="btn btn-success">New Registration successfully</span>
+</div>
+<div class="msgCenter">
+<span class="btn btn-danger">New Registration successfully</span>
+</div>
+
+class="btn btn-danger"

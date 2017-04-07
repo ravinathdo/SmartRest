@@ -1,7 +1,14 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+if(!isset($_SESSION['user_role'])){
+    header('Location:index.php');
+}
+    
+?>
 <head>
     <meta charset="utf-8">
-    <title>Restaurant</title>
+    <title>E-Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -11,30 +18,38 @@
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-    <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
+
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+
+    <style type="text/css">
+        .pk-free{
+            background-image: url(images/pk-free.png);
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            padding-top: 13px;
+            float:inherit;
+            margin: 10px;
+        }
+        .pk-use{
+            background-image: url(images/pk-use.png);
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            padding-top: 13px;
+            float:inherit;
+            margin: 10px;
+        }
+    </style>
+
 </head>
 <body>
 
     <header>
         <div id="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="home-account">
-                            <a href="register.php">Register Free</a>
-                            <a href="login.php">Login</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cart-info">
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
+             <?php include './top_header.php'; ?>
         </div>
-        <div id="main-header" style="background-color:#F93">
+        <div id="main-header">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -42,19 +57,21 @@
                             <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                         <div class="main-menu">
                              <?php
-                             if(isset($_SESSION['user_role'])){
-								  if ($_SESSION['user_role'] == 'CUS')
+                            if ($_SESSION['user_role'] == 'CUS'){
                                 include './menu-customer.php';
-								 if ($_SESSION['user_role'] == 'ADM')
-                                include './menu-admin.php';
-								 }else{
-									 	 include './menu-visitor.php';
-									 }
+								}else if ($_SESSION['user_role'] == 'ADM'){
+                                include './menu-admin.php'; 
+								}else {
+									 include './menu-visitor.php';
+									}
                             ?>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+
                     </div>
                 </div>
             </div>
@@ -62,36 +79,8 @@
     </header>
 
     <div id="slider">
-        <div class="flexslider">
-            <ul class="slides">
-                <li>
-                    <div class="slider-caption">
-                        <h1>Smart Restaruant</h1>
-                       
-                        <!--<a href="single-post.html">Shop Now</a>-->
-                    </div>
-                    <img src="images/1.jpg" alt="" />
-                </li>
-                <!--<li>
-                    <div class="slider-caption">
-                        <h1>SMART Parking</h1>
-                        <p>Nulla id iaculis ligula. Vivamus mattis quam eget urna tincidunt consequat. Nullam 
-                            <br><br>consectetur tempor neque vitae iaculis. Aliquam erat volutpat.</p>
-                        <a href="single-post.html">More Details</a>
-                    </div>
-                    <img src="images/slide2.jpg" alt="" />
-                </li>
-                <li>
-                    <div class="slider-caption">
-                        <h1>SMART Serve</h1>
-                        <p>Maecenas fermentum est ut elementum vulputate. Ut vel consequat urna. Ut aliquet 
-                            <br><br>ornare massa, quis dapibus quam condimentum id.</p>
-                        <a href="single-post.html">Get Ready</a>
-                    </div>
-                    <img src="images/slide3.jpg" alt="" />
-                </li>-->
-            </ul>
-        </div>
+
+
     </div>
 
 
@@ -99,10 +88,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="heading-section">
-                        <h2>WE ARE SMART</h2>
-                        <img src="images/under-heading.png" alt="" >
-                    </div>
+                    <h4>&nbsp;</h4>
+
+
+
                 </div>
             </div>
             <div class="row">
@@ -115,33 +104,121 @@
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-feed"></i>
-                        </div>
-                        <h4>Smart Table</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
+
+                <div class="col-md-8 col-sm-6">
+                    <div class="row">
+                       
+                       
+                       
+                       <?php
+				    include './_function.php';
+			
+                    $conn = getDBConnection();
+					   
+					   
+                       if(isset($_GET['action'])){
+						   //http://192.168.8.113/light1off
+						   //action=on&tableNo
+						   $action = $_GET['action'];
+						   $tableNo = $_GET['tableNo'];
+						   $curl = curl_init();
+
+//TABLE
+        //$url = 'http://localhost:81/ERest/SensorTable.php';
+		$url = 'http://192.168.8.113/light'.$tableNo.$action.'.php';
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        $str = curl_exec($curl);
+        updateTableStatus($conn, $tableNo, $str);
+	
+						   }
+						   
+						   
+						   function updateTableStatus($conn, $tableNo, $status){
+							    if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+
+            $sql = " UPDATE tbl SET status = '" . $status . "' WHERE tableno = '" . $tableNo . "' ";
+
+            if (mysqli_query($conn, $sql)) {
+                echo $tableNo . " " . $status . " " . date("h:i:sa") . "<br>";
+            } else {
+                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            }
+							   }
+						   
+						   
+					   
+					   ?>
+                       
+                       
+                       
+                       
+                       
+                       
+
                     </div>
+
+
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td>Table No</td>
+                                <td>Current Status</td>
+                                <td>Action</td>
+                              </tr>
+
+                    <?php
+            
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+                    $sql = "SELECT * FROM tbl ";
+
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        // output data of each row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                              <tr>
+                                <td><?php echo $row['tableno'] ?></td>
+                                <td><?php echo $row['status'] ?></td>
+                                <td><?php if($row['status'] == 'RESERVED'){
+									?>
+									<a href="smartTable.php?action=off&tableNo=<?php echo $row['tableno'] ?>"><button>VACANT</button></a>
+									<?php
+									}else if($row['status'] == 'VACANT'){
+									?>
+									<a href="smartTable.php?action=on&tableNo=<?php echo $row['tableno'] ?>"><button>RESERVED</button></a>
+									<?php
+									}else{
+									?>
+									<a href="smartTable.php?action=off&tableNo=<?php echo $row['tableno'] ?>"><button>Retry-VACANT</button></a>
+									<?php
+										} ?></td>
+                              </tr>
+
+                            <?php
+                        }
+                    } else {
+                        
+                    }
+
+                    mysqli_close($conn);
+                    ?>
+
+                   
+                  </table>
+                  <!--                    <div class="pk-free">
+                                            <h1>1</h1>
+                                        </div> 
+                                        <div class="pk-use">
+                                            <h1>2</h1>
+                                        </div>-->
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-street-view"></i>
-                        </div>
-                        <h4>Smart  waiters</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-bell"></i>
-                        </div>
-                        <h4>Ready to Serve</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </div>
@@ -302,7 +379,7 @@
     </div>
 
     <footer>
-       <?php include './footer.php';?>
+
     </footer>
 
 

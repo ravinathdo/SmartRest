@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>Restaurant</title>
+    <title>E-Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-    <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
+
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
 <body>
@@ -22,19 +22,20 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="home-account">
-                            <a href="register.php">Register Free</a>
-                            <a href="login.php">Login</a>
+                            <a href="#">Home</a>
+                            <a href="#">My account</a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="cart-info">
-                     
+                            <i class="fa fa-shopping-cart"></i>
+                            Login Information
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="main-header" style="background-color:#F93">
+        <div id="main-header">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
@@ -44,17 +45,16 @@
                     </div>
                     <div class="col-md-6">
                         <div class="main-menu">
-                             <?php
-                             if(isset($_SESSION['user_role'])){
-								  if ($_SESSION['user_role'] == 'CUS')
-                                include './menu-customer.php';
-								 if ($_SESSION['user_role'] == 'ADM')
-                                include './menu-admin.php';
-								 }else{
-									 	 include './menu-visitor.php';
-									 }
-                            ?>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">SMART Parking</a></li>
+                                <li><a href="products.html">Reservation</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                            </ul>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+
                     </div>
                 </div>
             </div>
@@ -66,13 +66,14 @@
             <ul class="slides">
                 <li>
                     <div class="slider-caption">
-                        <h1>Smart Restaruant</h1>
-                       
-                        <!--<a href="single-post.html">Shop Now</a>-->
+                        <h1>Delicious Meals</h1>
+                        <p>Donec justo dui, semper vitae aliquam euzali, ornare pretium enim. Maecenas molestie diam
+                            <br><br>eget tellus luctus fermentum.</p>
+                        <a href="single-post.html">Shop Now</a>
                     </div>
-                    <img src="images/1.jpg" alt="" />
+                    <img src="images/slide1.jpg" alt="" />
                 </li>
-                <!--<li>
+                <li>
                     <div class="slider-caption">
                         <h1>SMART Parking</h1>
                         <p>Nulla id iaculis ligula. Vivamus mattis quam eget urna tincidunt consequat. Nullam 
@@ -89,7 +90,7 @@
                         <a href="single-post.html">Get Ready</a>
                     </div>
                     <img src="images/slide3.jpg" alt="" />
-                </li>-->
+                </li>
             </ul>
         </div>
     </div>
@@ -129,7 +130,7 @@
                         <div class="icon">
                             <i class="fa fa-street-view"></i>
                         </div>
-                        <h4>Smart  waiters</h4>
+                        <h4>Smart to waiters</h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>
@@ -302,7 +303,7 @@
     </div>
 
     <footer>
-       <?php include './footer.php';?>
+       
     </footer>
 
 
