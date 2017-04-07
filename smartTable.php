@@ -121,16 +121,9 @@ if(!isset($_SESSION['user_role'])){
 						   //action=on&tableNo
 						   $action = $_GET['action'];
 						   $tableNo = $_GET['tableNo'];
-						   $curl = curl_init();
-
-//TABLE
-        //$url = 'http://localhost:81/ERest/SensorTable.php';
-		$url = 'http://192.168.8.113/light'.$tableNo.$action.'.php';
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER, false);
-        $str = curl_exec($curl);
-        updateTableStatus($conn, $tableNo, $str);
+						   
+						   
+        updateTableStatus($conn, $tableNo, $action);
 	
 						   }
 						   
@@ -162,7 +155,7 @@ if(!isset($_SESSION['user_role'])){
                     </div>
 
 
- <table width="100%" border="0" cellspacing="0" cellpadding="0">
+ <table width="100%" border="0" cellspacing="0" cellpadding="2">
                               <tr>
                                 <td>Table No</td>
                                 <td>Current Status</td>
@@ -183,14 +176,22 @@ if(!isset($_SESSION['user_role'])){
                             ?>
                               <tr>
                                 <td><?php echo $row['tableno'] ?></td>
-                                <td><?php echo $row['status'] ?></td>
+                                <td>
+                              
+                                <button    <?php
+                                if( $row['status'] == 'RESERVED') {
+									echo "class='btn btn-danger'";
+									}else  if( $row['status'] == 'VACANT'){
+										echo "class='btn btn-success'";
+										}
+								?>    style="cursor:default"><?php echo $row['status'] ?></button></td>
                                 <td><?php if($row['status'] == 'RESERVED'){
 									?>
-									<a href="smartTable.php?action=off&tableNo=<?php echo $row['tableno'] ?>"><button>VACANT</button></a>
+									<a href="smartTable.php?action=VACANT&tableNo=<?php echo $row['tableno'] ?>"><button>VACANT</button></a>
 									<?php
 									}else if($row['status'] == 'VACANT'){
 									?>
-									<a href="smartTable.php?action=on&tableNo=<?php echo $row['tableno'] ?>"><button>RESERVED</button></a>
+									<a href="smartTable.php?action=RESERVED&tableNo=<?php echo $row['tableno'] ?>"><button>RESERVED</button></a>
 									<?php
 									}else{
 									?>

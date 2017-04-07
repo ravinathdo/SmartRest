@@ -11,7 +11,7 @@ function getDBConnection() {
       $servername = "localhost";
       $username = "root";
       $password = "123";
-      $db = "erest_db";
+      $db = "sresto_db";
      
 
 	/* 000webhost

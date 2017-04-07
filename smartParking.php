@@ -104,6 +104,12 @@ if(!isset($_SESSION['user_role'])){
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>
+                
+                
+                
+                
+                
+                
 
                 <div class="col-md-8 col-sm-6">
                     <div class="row">
@@ -111,14 +117,52 @@ if(!isset($_SESSION['user_role'])){
                         <?php
                         echo "     | Last Updated on - " . date("Y-m-d h:i:sa");
                         ?>
+							
+                           
+                            <?php
+                            include './_function.php';
+							 $conn = getDBConnection();
+							 
+							 
+							 
+							
+							if(isset($_GET['slotno'])){
+								
+								// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
+$status = $_GET['status'];
+$slotno = $_GET['slotno'];
+
+$sql = "UPDATE slot SET STATUS='$status' WHERE slotno = '$slotno'";
+
+
+if (mysqli_query($conn, $sql)) {
+    echo "<p class=\"bg-primary\">Slot Status updated successfully</p> ";
+} else {
+    echo "Error updating record: " . mysqli_error($conn);
+}
+
+								
+								
+								
+								}
+							
+							
+							
+							?>
+                            
+                            
+                            
+                            
                     </div>
 
-
                     <?php
-                    include './_function.php';
+                    
 
-                    $conn = getDBConnection();
+                   
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     }
@@ -132,7 +176,7 @@ if(!isset($_SESSION['user_role'])){
                                 ?>
 
                                 <div class="pk-free">
-                                    <h1><?php echo $row['slotno'] ?></h1>
+                                    <h1><a href="smartParking.php?status=USE&slotno=<?php echo $row['slotno'] ?>" style="color:#333"><?php echo $row['slotno'] ?></a></h1>
                                 </div>
 
                                 <?php
@@ -141,7 +185,7 @@ if(!isset($_SESSION['user_role'])){
 
 
                                 <div class="pk-use">
-                                    <h1><?php echo $row['slotno'] ?></h1>
+                                    <h1><a href="smartParking.php?status=FREE&slotno=<?php echo $row['slotno'] ?>" style="color:#333"><?php echo $row['slotno'] ?></a></h1>
                                 </div>
                                 <?php
                             }

@@ -58,7 +58,7 @@ http://www.templatemo.com/free-website-templates/417-grill
                                     <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-9">
                                <div class="main-menu">
                              <?php
 							 if(isset($_SESSION['user_role'])){

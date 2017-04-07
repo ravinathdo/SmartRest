@@ -128,6 +128,9 @@ session_start();
 								
 								//echo 'OKYYYYY';
 								//ob_start();
+                                                                //
+                                                                //
+//                                                                echo 'ooooooook';
                                 header("Location:home.php");
 //                                echo '<script type="text/javascript">';
 //echo 'window.location.href="home.php";';
