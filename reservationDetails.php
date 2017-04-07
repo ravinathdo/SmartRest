@@ -100,8 +100,8 @@ http://www.templatemo.com/free-website-templates/417-grill
                             
                             <table width="100%" border="0" cellspacing="0" cellpadding="2">
                         <tr>
-                            <td>Table No</td>
-                            <td>Current Status</td>
+                            <td><strong>Table No</strong></td>
+                            <td><strong>Current Status</strong></td>
                         </tr>
 
 
