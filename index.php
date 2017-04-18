@@ -12,39 +12,71 @@
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
     <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
+    
+    
+    
+    
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    
+    
+    <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
 </head>
 <body>
 
     <header>
-        <div id="top-header">
-            <div class="container">
+      <div id="main-header" >
+          <div class="container">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="41%">&nbsp;</td>
+    <td width="24%"><span class="logo"><a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a></span></td>
+    <td width="35%"><table width="50%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>   <a href="register.php" class="btn btn-default">Register Free</a>
+                            &nbsp;<a href="login.php" class="btn btn-default">Login</a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+            
+            
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="home-account">
-                            <a href="register.php">Register Free</a>
-                            <a href="login.php">Login</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cart-info">
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="main-header" style="background-color:#F93">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="main-menu">
-                             <?php
+                    <div id="menuDiv">
+                    <center>
+                    <?php
                              if(isset($_SESSION['user_role'])){
 								  if ($_SESSION['user_role'] == 'CUS')
                                 include './menu-customer.php';
@@ -54,10 +86,23 @@
 									 	 include './menu-visitor.php';
 									 }
                             ?>
-                        </div>
+                            </center>
                     </div>
+                    
+                    
+                 
+                    
+                    
+                    
+                    
                 </div>
-            </div>
+                
+                
+                
+                
+                
+                
+        </div>
         </div>
     </header>
 
@@ -66,85 +111,19 @@
             <ul class="slides">
                 <li>
                     <div class="slider-caption">
-                        <h1>Smart Restaruant</h1>
+                        <h1 style="color:#FFF">Smart Restaruant</h1>
                        
                         <!--<a href="single-post.html">Shop Now</a>-->
                     </div>
                     <img src="images/1.jpg" alt="" />
                 </li>
-                <!--<li>
-                    <div class="slider-caption">
-                        <h1>SMART Parking</h1>
-                        <p>Nulla id iaculis ligula. Vivamus mattis quam eget urna tincidunt consequat. Nullam 
-                            <br><br>consectetur tempor neque vitae iaculis. Aliquam erat volutpat.</p>
-                        <a href="single-post.html">More Details</a>
-                    </div>
-                    <img src="images/slide2.jpg" alt="" />
-                </li>
-                <li>
-                    <div class="slider-caption">
-                        <h1>SMART Serve</h1>
-                        <p>Maecenas fermentum est ut elementum vulputate. Ut vel consequat urna. Ut aliquet 
-                            <br><br>ornare massa, quis dapibus quam condimentum id.</p>
-                        <a href="single-post.html">Get Ready</a>
-                    </div>
-                    <img src="images/slide3.jpg" alt="" />
-                </li>-->
+               
             </ul>
         </div>
     </div>
 
 
-    <div id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-section">
-                        <h2>WE ARE SMART</h2>
-                        <img src="images/under-heading.png" alt="" >
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-car"></i>
-                        </div>
-                        <h4>Smart Parking</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-feed"></i>
-                        </div>
-                        <h4>Smart Table</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-street-view"></i>
-                        </div>
-                        <h4>Smart  waiters</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-bell"></i>
-                        </div>
-                        <h4>Ready to Serve</h4>
-                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 
 
@@ -152,14 +131,7 @@
 
     <div id="latest-blog">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-section">
-                        <h2>What are Latest</h2>
-                        <img src="images/under-heading.png" alt="" >
-                    </div>
-                </div>
-            </div>
+            <div class="row"></div>
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-post">
@@ -264,46 +236,14 @@
 
     <div id="testimonails">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="heading-section">
-                        <h2>What Customers Say</h2>
-                        <img src="images/under-heading.png" alt="" >
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="testimonails-slider">
-                        <ul class="slides">
-                            <li>
-                                <div class="testimonails-content">
-                                    <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    <h6>Jennifer - <a href="#">Chief Designer</a></h6>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="testimonails-content">
-                                    <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    <h6>Laureen - <a href="#">Marketing Executive</a></h6>
-                                </div> 
-                            </li>
-                            <li>
-                                <div class="testimonails-content">
-                                    <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                    <h6>Tanya - <a href="#">Creative Director</a></h6>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="row"></div>
+            <div class="row"></div>
         </div>
     </div>
 
     <footer>
-       <?php include './footer.php';?>
-    </footer>
+   
+</footer>
 
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>

@@ -21,3 +21,10 @@ and open the template in the editor.
 .mandoField{
     color: red;
 }
+
+
+#menuDiv {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}

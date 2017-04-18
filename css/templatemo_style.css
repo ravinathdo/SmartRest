@@ -8,8 +8,8 @@ http://www.templatemo.com/free-website-templates/417-grill
 
 /*-- Basic --*/
 a {
-  text-decoration: none;
-  color: #f78e21;
+	text-decoration: none;
+	color: #0033CC;
 }
 
 a:hover {
@@ -79,6 +79,11 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+
+#main-header{
+	background-color:#0966c5;
+	}
+	
 .logo {
   padding: 20px 0;
 }
@@ -963,8 +968,8 @@ textarea {
 /*--Footer--*/
 
 footer {
-  background-color: #f3f3f3;
-  border-top: 4px solid #f78e21;
+  background-color: #0966c5;
+  border-top: 4px solid #0966c5;
   margin-top: 120px;
 }
 
