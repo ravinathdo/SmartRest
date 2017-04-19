@@ -16,6 +16,7 @@ session_start();
         <link rel="stylesheet" href="css/flexslider.css">
         <link rel="stylesheet" href="css/testimonails-slider.css">
         <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
+        
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 
         <style type="text/css">
@@ -42,30 +43,28 @@ session_start();
     </head>
     <body>
 
-        <header>
-            <div id="top-header">
-                <?php include './top_header.php'; ?>
-            </div>
-            <div id="main-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="logo">
-                                <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="main-menu">
-                                <?php include './menu-customer.php'; ?>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+         <header>
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
-                        </div>
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
-        </header>
+
+        </div>
+      </div>
+    </header>
+
 
      
 
@@ -78,12 +77,10 @@ session_start();
                 <div class="row">
                     <div class="col-md-3 col-sm-6">
                         <div class="service-item">
-                            <div class="icon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
+                           <img src="images/fathers-day-button.png" width="283" height="123" />
                             <h4>Table Reservation </h4>
                             <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
-                        </div>
+                      </div>
                     </div>
 
                     <div class="col-md-8 col-sm-6">
@@ -144,7 +141,7 @@ session_start();
                                         </tr>
                                         <tr>
                                           <td>&nbsp;</td>
-                                            <td><input type="submit" value="Reserve" name="btnReserv" class="btn btn-warning"/>&nbsp;<input type="reset"  class="btn btn-default"/></td>
+                                            <td><input type="submit" value="Reserve" name="btnReserv" class="btn btn-primary"/>&nbsp;<input type="reset"  class="btn btn-default"/></td>
                                         </tr>
                                     </table>
                                 </form>
@@ -313,14 +310,7 @@ if (mysqli_num_rows($result) > 0) {
 
         <div id="latest-blog">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading-section">
-                            <h2>What are Latest</h2>
-                            <img src="images/under-heading.png" alt="" >
-                        </div>
-                    </div>
-                </div>
+                <div class="row"></div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="blog-post">
@@ -423,44 +413,7 @@ if (mysqli_num_rows($result) > 0) {
         </div>
 
 
-        <div id="testimonails">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="heading-section">
-                            <h2>What Customers Say</h2>
-                            <img src="images/under-heading.png" alt="" >
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="testimonails-slider">
-                            <ul class="slides">
-                                <li>
-                                    <div class="testimonails-content">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                        <h6>Jennifer - <a href="#">Chief Designer</a></h6>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="testimonails-content">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                        <h6>Laureen - <a href="#">Marketing Executive</a></h6>
-                                    </div> 
-                                </li>
-                                <li>
-                                    <div class="testimonails-content">
-                                        <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit sed arcu odio, sagittis vel diam in, malesuada malesuada risus. Aenean a sem leo. Nam ultricies dolor et mi tempor, non pulvinar felis sollicitudin.</p>
-                                        <h6>Tanya - <a href="#">Creative Director</a></h6>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="testimonails"></div>
 
         <footer>
 

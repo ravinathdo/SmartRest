@@ -18,7 +18,7 @@ if(!isset($_SESSION['user_role'])){
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-
+<link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 
     <style type="text/css">
@@ -46,36 +46,25 @@ if(!isset($_SESSION['user_role'])){
 <body>
 
     <header>
-        <div id="top-header">
-             <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="main-menu">
-                             <?php
-                            if ($_SESSION['user_role'] == 'CUS'){
-                                include './menu-customer.php';
-								}else if ($_SESSION['user_role'] == 'ADM'){
-                                include './menu-admin.php'; 
-								}else {
-									 include './menu-visitor.php';
-									}
-                            ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="slider">
@@ -97,9 +86,7 @@ if(!isset($_SESSION['user_role'])){
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-car"></i>
-                        </div>
+                  <img src="images/Parking-arrow-right..jpg" />
                         <h4>Smart Parking</h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>

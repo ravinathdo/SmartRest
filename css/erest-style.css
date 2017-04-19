@@ -8,8 +8,9 @@ and open the template in the editor.
     Author     : 001343
 */
 .titleStyle{
-    color: #f78e21;
-    font-weight: bold;
+	color: #06C;
+	font-weight: bold;
+	text-align: center;
 }
 
 .msgCenter{
@@ -27,4 +28,36 @@ and open the template in the editor.
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
 }

@@ -1,24 +1,26 @@
-  <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="home-account">
-                            <a href = "home.php">Home</a>
+
+            
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="41%"><a href = "home.php">Home</a> | 
                             
-                            <a href = "changepassword.php">Change Password</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cart-info">
-                            <a href="logout.php">Welcome <?php echo $_SESSION['user_username']; ?>
+                            <a href = "changepassword.php">Change Password</a></td>
+    <td width="24%"><span class="logo"><a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a></span></td>
+    <td width="35%"><table width="50%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>   <a href="logout.php">Welcome <?php echo $_SESSION['user_username']; ?>
                                  <?php
                             if ($_SESSION['user_role'] == 'CUS')
                                 echo '[ Customer ]';
                             if ($_SESSION['user_role'] == 'ADM')
                                 echo '[ Administrator ]';
                             ?>
-                                <i class="fa fa-sign-out"></i>
-                                logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                               <br> <i class="fa fa-sign-out"></i>
+                                logout</a> </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>

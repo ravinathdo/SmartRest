@@ -9,7 +9,7 @@ http://www.templatemo.com/free-website-templates/417-grill
 /*-- Basic --*/
 a {
 	text-decoration: none;
-	color: #0033CC;
+	color: #FFF;
 }
 
 a:hover {
@@ -866,8 +866,8 @@ textarea {
 
 .icon i {
   border-radius: 50%;
-  border: 20px solid #f78e21;
-  color: #f78e21;
+  border: 20px solid #06C;
+  color: #06C;
   font-size: 28px;
   line-height: 80px;
   width: 120px;
