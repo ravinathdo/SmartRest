@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-
+<link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 
     <style type="text/css">
@@ -29,29 +29,26 @@ session_start();
 </head>
 <body>
 
-    <header>
-        <div id="top-header">
-            <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="main-menu">
-                            <?php include './menu-customer.php'; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+     <header>
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="services">
@@ -64,15 +61,13 @@ session_start();
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-cutlery"></i>
-                        </div>
+                       <img src="images/pauzahr_h_5e.png" width="182" height="168" />
                         <h4>Food Ordering</h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.
                         
                         </p>
                         <p><form action="custOrderHistory.php">
-                        <input type="submit" value="My Order History" class="btn btn-warning"/>
+                        <input type="submit" value="My Order History" class="btn btn-primary"/>
                         </form>
                         </p>
                     </div>
@@ -130,7 +125,7 @@ session_start();
                                 </table>
                                 </div>
                             <form action="foodOrderPlace.php" method="post" >
-                                    <input type="submit" value="Order" class="btn btn-warning"/>
+                                    <input type="submit" value="Order" class="btn btn-primary"/>
                                 </form>
 
                                 <?php
@@ -159,14 +154,14 @@ session_start();
 //                                    echo "id: " . $row["id"] . " - Name: " . $row["itemname"];
                                                 ?>
                                                 <div class="movieWap">
-                                                    <h5 style="color: orange;font-weight: bold"><?php echo $row['itemname']; ?></h5>
+                                                    <h5 style="color: #06C;font-weight: bold"><?php echo $row['itemname']; ?></h5>
                                                     <form action="cartAdd.php?id=<?php echo $index; ?>" method="post">
                                                         <img src="food_item/<?php echo $row['imagepath']; ?>" width="200px" height="200px" />
                                                         <input type="hidden" name="itemid" value="<?php echo $row['id']; ?>" /><br>
                                                         <input type="text" name="qty" class="form-control" placeholder="Quantity" /><br>
                                                         <input type="text" name="price" value="<?php echo $row['price']; ?>" class="form-control" readonly /><br>
                                                         <input type="hidden" name="itemName" value="<?php echo $row['itemname']; ?>" /><br>
-                                                        <input type="submit" value="Add" class="btn btn-warning"/>
+                                                        <input type="submit" value="Add" class="btn btn-primary"/>
                                                     </form>
                                                 </div>
 
@@ -220,7 +215,7 @@ session_start();
 
 
     <footer>
-        <?php include './footer.php'; ?>
+  
     </footer>
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>

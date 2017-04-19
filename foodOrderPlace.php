@@ -14,34 +14,31 @@ session_start();
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-
+<link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
 <body>
 
     <header>
-        <div id="top-header">
-            <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="main-menu">
-                            <?php include './menu-customer.php'; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="services">
@@ -54,9 +51,7 @@ session_start();
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
-                        <div class="icon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
+                        <img src="images/pauzahr_h_5e.png" width="182" height="168" />
                         <h4>Food Order </h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
@@ -248,7 +243,7 @@ ON orderitem.orderid =  order_tbl.id WHERE orderitem.id = '$orderNo' ";
 
 
     <footer>
-        <?php include './footer.php'; ?>
+  
     </footer>
 
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
