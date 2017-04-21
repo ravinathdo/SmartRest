@@ -20,29 +20,26 @@ include_once './_function.php';
 </head>
 <body>
 
-    <header>
-        <div id="top-header">
-            <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="main-menu">
-                            <?php include './menu.php'; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+     <header>
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="services">
@@ -51,9 +48,9 @@ include_once './_function.php';
                 <div class="col-md-3 col-sm-6">
                     <div class="service-item">
                         <div class="icon">
-                            <i class="fa fa-calendar"></i>
+                            <i class="fa fa-users"></i>
                         </div>
-                        <h4>Order Explorer </h4>
+                        <h4>Waiter Activity </h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>

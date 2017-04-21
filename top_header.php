@@ -11,9 +11,9 @@
         <td>   <a href="logout.php">Welcome <?php echo $_SESSION['user_username']; ?>
                                  <?php
                             if ($_SESSION['user_role'] == 'CUS')
-                                echo '[ Customer ]';
+                                echo '[Customer]';
                             if ($_SESSION['user_role'] == 'ADM')
-                                echo '[ Administrator ]';
+                                echo '[Administrator]';
                             ?>
                                <br> <i class="fa fa-sign-out"></i>
                                 logout</a> </td>

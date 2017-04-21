@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+session_start();
+session_destroy();
+session_start();
+
+?>
 <head>
     <meta charset="utf-8">
     <title>Restaurant</title>
@@ -28,6 +34,7 @@
     <header>
       <div id="main-header" >
           <div class="container">
+          
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="41%">&nbsp;</td>

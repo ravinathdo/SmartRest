@@ -15,8 +15,7 @@ http://www.templatemo.com/free-website-templates/417-grill
         <title>ERest</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
 
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/font-awesome.css">
@@ -24,7 +23,7 @@ http://www.templatemo.com/free-website-templates/417-grill
         <link rel="stylesheet" href="css/templatemo_misc.css">
         <link rel="stylesheet" href="css/flexslider.css">
         <link rel="stylesheet" href="css/testimonails-slider.css">
-
+   <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -33,44 +32,58 @@ http://www.templatemo.com/free-website-templates/417-grill
         <![endif]-->
 
             <header>
-                <div id="top-header">
-            <div class="container">
+      <div id="main-header" >
+          <div class="container">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="41%">&nbsp;</td>
+    <td width="24%"><span class="logo"><a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a></span></td>
+    <td width="35%"><table width="50%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>   <a href="register.php" class="btn btn-default">Register Free</a>
+                            &nbsp;<a href="login.php" class="btn btn-default">Login</a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+            
+            
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="home-account">
-                            <a href="register.php">Register Free</a>
-                            <a href="login.php">Login</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cart-info">
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <div id="main-header" style="background-color:#F93">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="logo">
-                                    <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                               <div class="main-menu">
-                             <?php
-                         
-									 include './menu-visitor.php';
-									
+                    <div id="menuDiv">
+                    <center>
+                    <?php
+                             if(isset($_SESSION['user_role'])){
+								  if ($_SESSION['user_role'] == 'CUS')
+                                include './menu-customer.php';
+								 if ($_SESSION['user_role'] == 'ADM')
+                                include './menu-admin.php';
+								 }else{
+									 	 include './menu-visitor.php';
+									 }
                             ?>
-                        </div>
-                            </div>
-                        </div>
+                      </center>
                     </div>
+                    
+                    
+                 
+                    
+                    
+                    
+                    
                 </div>
-            </header>
+                
+                
+                
+                
+                
+                
+        </div>
+  </div>
+    </header>
 
 
             <div id="heading">
@@ -168,93 +181,7 @@ http://www.templatemo.com/free-website-templates/417-grill
 
 
             <footer>
-                <div class="container">
-                    <div class="top-footer">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="subscribe-form">
-                                    <span>Get in touch with us</span>
-                                    <form method="get" class="subscribeForm">
-                                        <input id="subscribe" type="text" />
-                                        <input type="submit" id="submitButton" />
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="social-bottom">
-                                    <span>Follow us:</span>
-                                    <ul>
-                                        <li><a href="#" class="fa fa-facebook"></a></li>
-                                        <li><a href="#" class="fa fa-twitter"></a></li>
-                                        <li><a href="#" class="fa fa-rss"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-footer">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="about">
-                                    <h4 class="footer-title">About Grill</h4>
-                                    <p>Grill is free HTML5 template by <span class="blue">template</span><span class="green">mo</span> and it is a free responsive bootstrap layout that can be applied for any purpose.
-                                    <br><br>Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for photos used in this template. Nam commodo erat quis ligula placerat viverra.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="shop-list">
-                                    <h4 class="footer-title">Shop Categories</h4>
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>New Grill Menu</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Healthy Fresh Juices</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Spicy Delicious Meals</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Simple Italian Pizzas</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Pure Good Yogurts</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i>Ice-cream for kids</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="recent-posts">
-                                    <h4 class="footer-title">Recent posts</h4>
-                                    <div class="recent-post">
-                                        <div class="recent-post-thumb">
-                                            <img src="images/recent-post1.jpg" alt="">
-                                        </div>
-                                        <div class="recent-post-info">
-                                            <h6><a href="#">Delicious and Healthy Menus</a></h6>
-                                            <span>24/12/2084</span>
-                                        </div>
-                                    </div>
-                                    <div class="recent-post">
-                                        <div class="recent-post-thumb">
-                                            <img src="images/recent-post2.jpg" alt="">
-                                        </div>
-                                        <div class="recent-post-info">
-                                            <h6><a href="#">Simple and effective meals</a></h6>
-                                            <span>18/12/2084</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="more-info">
-                                    <h4 class="footer-title">More info</h4>
-                                    <p>Sed dignissim, diam id molestie faucibus, purus nisl pretium quam, in pulvinar velit massa id elit.</p>
-                                    <ul>
-                                        <li><i class="fa fa-phone"></i>010-020-0340</li>
-                                        <li><i class="fa fa-globe"></i>123 Dagon Studio, Yakin Street, Digital Estate</li>
-                                        <li><i class="fa fa-envelope"></i><a href="#">info@company.com</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bottom-footer">
-                        <p>Copyright © 2084 <a href="#">Your Company Name</a></p>
-                    </div>
-                    
-                </div>
+                
             </footer>
 
         <script src="js/vendor/jquery-1.11.0.min.js"></script>

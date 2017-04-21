@@ -49,34 +49,26 @@ echo '</script>';
     <body>
 
         <header>
-            <div id="top-header">
-                <?php include './top_header.php'; ?>
-            </div>
-            <div id="main-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="logo">
-                                <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="main-menu">
-                               <?php
-                            if ($_SESSION['user_role'] == 'CUS')
-                                include './menu-customer.php';
-                            if ($_SESSION['user_role'] == 'ADM')
-                                include './menu-admin.php';
-                            ?>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
-                        </div>
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
-        </header>
+
+        </div>
+      </div>
+    </header>
 
         <div id="slider">
 

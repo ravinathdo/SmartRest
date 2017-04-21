@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/testimonails-slider.css">
-
+<link rel="stylesheet" href="css/erest-style.css">
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     
     
@@ -36,28 +36,25 @@ session_start();
 <body>
 
     <header>
-        <div id="top-header">
-            <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="main-menu">
-                            <?php include './menu.php'; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="services">
@@ -73,7 +70,7 @@ session_start();
                         <div class="icon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <h4>Table Reservation </h4>
+                        <h4>ORDER Explorer </h4>
                         <p>Sed egestas tincidunt mollis. Suspendisse rhoncus vitae enim et faucibus. Ut dignissim nec arcu nec hendrerit. Sed arcu  sagittis vel diam in, malesuada malesuada risus. Aenean a sem leoneski.</p>
                     </div>
                 </div>
