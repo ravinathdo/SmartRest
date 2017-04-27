@@ -7,19 +7,19 @@
  */
 
 function getDBConnection() {
-    /* */
+    /**/
       $servername = "localhost";
       $username = "root";
       $password = "123";
       $db = "sresto_db";
      
 
-	/* 000webhost
-     $servername = "localhost";
-    $username = "id1080794_ravinathdo";
+    /* 000webhost 
+    $servername = "localhost";
+    $username = "id1080794_db";
     $password = "123@com";
-    $db = "id1080794_erest_db";
-	*/
+    $db = "id1080794_sresto_db";
+*/
 
 // Create connection
     $conn = mysqli_connect($servername, $username, $password, $db);

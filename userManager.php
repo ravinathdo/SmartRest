@@ -179,6 +179,16 @@ VALUES ('" . $_POST['firstname'] . "',
                 if (!$conn) {
                     die("Connection failed: " . mysqli_connect_error());
                 }
+				
+				
+				if(isset($_GET["ID"])){
+									$upsql = "UPDATE USER  SET STATUS =  '".$_GET["status"]."'  WHERE id =  '".$_GET["ID"]."' ";
+									
+									 mysqli_query($conn, $upsql);
+									 echo '<b>User Updated Successfully</p>';
+									}
+				
+				
 
                 $sql = " SELECT * FROM user ";
                 $result = mysqli_query($conn, $sql);
@@ -212,17 +222,19 @@ VALUES ('" . $_POST['firstname'] . "',
     <td><?php echo $row["email"] ?></td>
     <td><?php echo $row["telephone"] ?></td>
     <td><?php echo $row["datecreated"] ?></td>
-    <td><?php echo $row["status"] ?></td>
-    
-  </tr>
+    <td> 
 
-
-                        <?php
-                    }
-					
-					
-					
-					
+	<?php   if($row["status"]=='ACT'){
+		?>  <a class="btn btn-link" href="userManager.php?ID=<?php echo $row["id"] ?>&status=DACT">Enable</a> <?php
+		} 
+		if($row["status"]=='DACT'){
+			?>   <a class="btn btn-link" href="userManager.php?ID=<?php echo $row["id"] ?>&status=ACT">Disable</a> <?php
+			}
+		 ?> </td>
+  </tr><?php
+  
+  }
+  				
                 } else {
                     echo "0 results";
                 }

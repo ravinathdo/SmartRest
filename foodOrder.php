@@ -194,7 +194,7 @@ session_start();
                                 if (!$conn) {
                                     die("Connection failed: " . mysqli_connect_error());
                                 }
-                                $sql = "SELECT * FROM item";
+                                $sql = "SELECT * FROM item WHERE statuscode = 'ACT'";
                                 $result = mysqli_query($conn, $sql);
 
                                 mysqli_close($conn);

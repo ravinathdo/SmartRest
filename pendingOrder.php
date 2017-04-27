@@ -98,15 +98,24 @@ include_once './_function.php';
                                     <td width="17%">Order ID</td>
                                     <td width="26%">Amount</td>
 
-                                    <td width="25%">&nbsp;</td>
-                                    <td width="18%">Order By</td>
-                                    <td width="14%">Status</td>
+                                    <td width="24%">&nbsp;</td>
+                                    <td width="14%">Order By</td>
+                                    <td width="19%">Status</td>
 
                                 </tr>
 
 
                                 <?php
                                 $conn = getDBConnection();
+								
+								
+								if(isset($_GET['orderID'])){
+									$upsql = "UPDATE order_tbl SET  status = '".$_GET["status"]."' WHERE id = '".$_GET["orderID"]."'";
+									 mysqli_query($conn, $upsql);
+									 echo '<b>Order Cancled Successfully</p>';
+									}
+								
+								
 
                                 if (!$conn) {
                                     die("Connection failed: " . mysqli_connect_error());
@@ -128,7 +137,12 @@ ON order_tbl.createduser = user.id WHERE order_tbl.STATUS = 'PND'";
                                             <td><?php echo $row["totalamount"]; ?></td>
                                             <td><?php echo $row["createddate"]; ?></td>
                                             <td><?php echo $row["username"]; ?></td>
-                                            <td><a  class="btn btn-warning" href="orderPreview.php?orderID=<?php echo $row["id"]; ?>&status=ACT&btn=Pick Up"><?php echo $row["status"]; ?></a></td>
+                                            <td><a  class="btn btn-warning" href="orderPreview.php?orderID=<?php echo $row["id"]; ?>&status=ACT&btn=Pick Up"><?php echo $row["status"]; ?></a>
+                                         
+                                           <?php if ($_SESSION['user_role'] == 'ADM') {?> 
+                                            <a class="btn btn-link"  href="pendingOrder.php?orderID=<?php echo $row["id"]; ?>&status=DACT">Cancle</a>
+                                            <?php } ?>
+                                            </td>
                                         </tr>
                                         <?php
                                     }
