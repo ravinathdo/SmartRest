@@ -6,7 +6,7 @@ include_once './_function.php';
 <head>
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="10">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -101,6 +101,7 @@ include_once './_function.php';
                                     <td width="24%">&nbsp;</td>
                                     <td width="14%">Order By</td>
                                     <td width="19%">Status</td>
+                                    <td>Take Away</td>
 
                                 </tr>
 
@@ -143,6 +144,7 @@ ON order_tbl.createduser = user.id WHERE order_tbl.STATUS = 'PND'";
                                             <a class="btn btn-link"  href="pendingOrder.php?orderID=<?php echo $row["id"]; ?>&status=DACT">Cancle</a>
                                             <?php } ?>
                                             </td>
+                                              <td><?php echo $row["takeaway"]; ?></td>
                                         </tr>
                                         <?php
                                     }

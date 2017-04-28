@@ -4,7 +4,7 @@ session_start();
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -70,6 +70,8 @@ session_start();
                         <input type="submit" value="My Order History" class="btn btn-primary"/>
                         </form>
                         </p>
+                      <h4>Takeaway</h4>
+                        <img src="images/takeaway.PNG" width="107" height="103" />
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-6">
@@ -125,6 +127,9 @@ session_start();
                                 </table>
                                 </div>
                             <form action="foodOrderPlace.php" method="post" >
+                            
+                            If Takeaway place your address on here
+                              <textarea name="address" ></textarea>
                                     <input type="submit" value="Order" class="btn btn-primary"/>
                                 </form>
 

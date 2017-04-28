@@ -103,7 +103,11 @@ http://www.templatemo.com/free-website-templates/417-grill
             <div id="product-post">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12"> 
+                        
+                        <h2>About Us</h2>
+                       <p>Located in Florida, Tomasso's Pizza & Subs is an Italian restaurant that offers the best in Italian food. Their menu ranges from a wide variety of pastas, pizzas, </p>
+                        
                               <div class="heading-section">
                                 <h2>Find Us On Map</h2>
                                 <img src="images/under-heading.png" alt="" >
@@ -144,14 +148,24 @@ http://www.templatemo.com/free-website-templates/417-grill
                                             -->
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="info">
-                                                <p>Duis at pharetra neque, ut condimentum, purus nisl pretium quam, in pulvinar velit massa id elit. </p>
-                                                <ul>
-                                                    <li><i class="fa fa-phone"></i>090-080-0760</li>
-                                                    <li><i class="fa fa-globe"></i>456 New Dagon City Studio, Yankinn, Digital Estate</li>
-                                                    <li><i class="fa fa-envelope"></i><a href="#">info@company.com</a></li>
-                                                </ul>
-                                            </div>
+                                          <h1>Contact<br>
+                                          </h1>
+                                          <p>544 W Alma Ave<br>
+                                            San Jose, CA 95125<br>
+                                            (408) 289-9781</p>
+                                          <h2>Restaurant Hours</h2>
+                                          <p>Sunday Brunch 10:00 AM to 2:00 PM<br>
+                                            Monday - Saturday<br>
+                                            Lunch 11:00 AM to 2:00 PM<br>
+                                            Dinner 5:00 PM to 9:00 PM (Mon - Thur)<br>
+                                            Friday and Saturday<br>
+                                            Dinner 5:00 PM to 10:00 PM<br>
+                                            Sunday<br>
+                                            Dinner 5:00 PM to 9:00 PM<br>
+                                            Bar/Lounge Hours: 11:00AM - 2:00 AM<br>
+                                            Karaoke<br>
+                                            Wednesday - Sat<br>
+                                            9:30 pm to 1:30am</p>
                                         </div>     
                                     </div>
                                 </div>

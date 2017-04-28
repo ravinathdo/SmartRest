@@ -8,7 +8,7 @@ if(!isset($_SESSION['user_role'])){
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 

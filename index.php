@@ -91,7 +91,9 @@ session_start();
             <ul class="slides">
                 <li>
                     <div class="slider-caption">
+                      <h1 style="color:#FFF"><i>Welcome</i></h1>
                         <h1 style="color:#FFF">Smart Restaruant</h1>
+                       
                        
                         <!--<a href="single-post.html">Shop Now</a>-->
                     </div>
@@ -100,6 +102,8 @@ session_start();
                
             </ul>
         </div>
+        <center><h4>WE ARE SMART <a href="SmartRest_app.apk" target="_blank" style="color:#F60">Download SmartRest App for Android</a></h4></center>
+                        
     </div>
 
 
@@ -116,11 +120,11 @@ session_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-post">
                         <div class="blog-thumb">
-                            <img src="images/blogpost1.jpg" alt="" />
+                            <img src="images/blogpost1_1.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Summer Sandwich</a></h4>
+                                <h4><a href="#">Summer Sandwich</a></h4>
                                 <span>29 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -132,11 +136,11 @@ session_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-post">
                         <div class="blog-thumb">
-                            <img src="images/blogpost2.jpg" alt="" />
+                            <img src="images/blogpost2_2.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">New Great Taste</a></h4>
+                                <h4><a href="#">New Great Taste</a></h4>
                                 <span>23 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -148,11 +152,11 @@ session_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-post">
                         <div class="blog-thumb">
-                            <img src="images/blogpost3.jpg" alt="" />
+                            <img src="images/blogpost3_3.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Spicy Pizza</a></h4>
+                                <h4><a href="#">Spicy Pizza</a></h4>
                                 <span>14 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -164,11 +168,11 @@ session_start();
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-post">
                         <div class="blog-thumb">
-                            <img src="images/blogpost4.jpg" alt="" />
+                            <img src="images/blogpost4_4.jpg" alt="" />
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Healthy Food</a></h4>
+                                <h4><a href="#">Healthy Food</a></h4>
                                 <span>25 Aug 2084</span>
                             </div>
                             <div class="content-hide">
@@ -209,7 +213,22 @@ session_start();
                         </div>
                     </div>
                 </div>
+                
+               
+                
             </div>
+             <a target="_blank" href="http://twitter.com/Twitter">
+                            <img src="images/social/social-icon-twitter-sm.png" alt="Twitter" /></a>
+                            <a target="_blank" href="http://facebook.com/">
+                            <img src="images/social/social-icon-facebook-sm.png" alt="Facebook" /></a>
+                            <a target="_blank" href="http://plus.google.com/">
+                            <img src="images/social/social-icon-googleplus-sm.png" alt="Google Plus" /></a>
+                            <a target="_blank" href="http://foursquare.com/">
+                            <img src="images/social/social-icon-foursquare-sm.png" alt="Foursquare" /></a>
+                            <a target="_blank" href="http://yelp.com/">
+                            <img src="images/social/social-icon-yelp-sm.png" alt="Yelp" /></a>
+                            <a target="_blank" href="http://tripadvisor.com/">
+                            <img src="images/social/social-icon-tripadvisor-sm.png" alt="TripAdvisor" /></a>
         </div>
     </div>
 

@@ -11,7 +11,7 @@ echo '</script>';
 <html>
     <head>
         <meta charset="utf-8">
-        <title>E-Restaurant</title>
+        <title>Restaurant</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -99,7 +99,7 @@ echo '</script>';
                                 $conn = getDBConnection();
 
                                 if (isset($_GET['rsvid'])) {
-                                    $sql = "UPDATE tbl_reservation SET STATUS='CLO' WHERE id='" . $_GET['rsvid'] . "'";
+                                    $sql = "UPDATE tbl_reservation SET status='CLO' WHERE id='" . $_GET['rsvid'] . "'";
 
                                     if (mysqli_query($conn, $sql)) {
                                         echo "Reservation closed successfully";
@@ -127,7 +127,7 @@ echo '</script>';
                                     }
 
                                     $sql = "
- SELECT T.*,status.description FROM tbl_reservation AS T INNER JOIN STATUS ON T.status = status.code
+ SELECT T.*,status.description FROM tbl_reservation AS T INNER JOIN status ON T.status = status.code
  WHERE  T.status = 'BUK' ORDER BY id DESC ";
 
                                     $result = mysqli_query($conn, $sql);
@@ -176,9 +176,10 @@ echo '</script>';
                                     $sql = "
 
  SELECT T.id,T.tableno,T.from_time,T.to_time,status.description,user.firstname FROM tbl_reservation AS T
- INNER JOIN STATUS ON T.status = status.code
+ INNER JOIN status ON T.status = status.code
  INNER JOIN user ON T.usercreated = user.id WHERE t.status != 'BUK' ORDER BY T.id DESC  ";
 
+echo  $sql;
                                     $result = mysqli_query($conn, $sql);
 
                                     if (mysqli_num_rows($result) > 0) {

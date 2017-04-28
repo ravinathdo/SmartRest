@@ -4,7 +4,7 @@ session_start();
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -146,10 +146,12 @@ session_start();
                                 $sql = " INSERT INTO `order_tbl`
             (`totalamount`,
              `status`,
-             `createduser`)
+             `createduser`,
+			  `takeaway`)
 VALUES ('" . $_SESSION['total_price'] . "',
         'PND',
-        '" . $_SESSION['user_id'] . "') ";
+        '" . $_SESSION['user_id'] . "',
+		 '" . $_POST['address'] . "') ";
 
                                 if (mysqli_query($conn, $sql)) {
                                     $orderNo = mysqli_insert_id($conn);

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <?php
 session_start();
-/* if(!isset($_SESSION['user_role']))
-  header('Location:index.php');
- */
+if (!isset($_SESSION['user_role'])){
+  //  header('Location:index.php');
+}
+
+
+
+include_once './_function.php';
+
+
 ?>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -29,7 +35,7 @@ http://www.templatemo.com/free-website-templates/417-grill
         <link rel="stylesheet" href="css/templatemo_misc.css">
         <link rel="stylesheet" href="css/flexslider.css">
         <link rel="stylesheet" href="css/testimonails-slider.css">
-
+    <link href="css/erest-style.css" rel="stylesheet" type="text/css"/>
         <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -37,36 +43,33 @@ http://www.templatemo.com/free-website-templates/417-grill
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-            <header>
-                <div id="top-header">
-            <div class="container">
+             <header>
+      <div id="main-header" >
+          <div class="container">
+          
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="41%">&nbsp;</td>
+    <td width="24%"><span class="logo"><a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a></span></td>
+    <td width="35%"><table width="50%" border="0" align="right" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>   <a href="register.php" class="btn btn-default">Register Free</a>
+                            &nbsp;<a href="login.php" class="btn btn-default">Login</a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+            
+            
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="home-account">
-                            <a href="register.php">Register Free</a>
-                            <a href="login.php">Login</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="cart-info">
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-                <div id="main-header"  style="background-color:#F93">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="logo">
-                                    <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                                </div>
-                            </div>
-                            <div class="col-md-9">
-                               <div class="main-menu">
-                             <?php
-							 if(isset($_SESSION['user_role'])){
+                    <div id="menuDiv">
+                    <center>
+                    <?php
+                             if(isset($_SESSION['user_role'])){
 								  if ($_SESSION['user_role'] == 'CUS')
                                 include './menu-customer.php';
 								 if ($_SESSION['user_role'] == 'ADM')
@@ -74,15 +77,26 @@ http://www.templatemo.com/free-website-templates/417-grill
 								 }else{
 									 	 include './menu-visitor.php';
 									 }
-                            
-								
                             ?>
-                        </div>
-                            </div>
-                        </div>
+                            </center>
                     </div>
+                    
+                    
+                 
+                    
+                    
+                    
+                    
                 </div>
-            </header>
+                
+                
+                
+                
+                
+                
+        </div>
+        </div>
+    </header>
 
 
             <div id="heading">
@@ -100,7 +114,7 @@ http://www.templatemo.com/free-website-templates/417-grill
                             
                             <table width="100%" border="0" cellspacing="0" cellpadding="2">
                         <tr>
-                            <td><strong>Table No</strong></td>
+                            <td align="right"><strong>Table No</strong></td>
                             <td><strong>Current Status</strong></td>
                         </tr>
 
@@ -126,10 +140,10 @@ http://www.templatemo.com/free-website-templates/417-grill
                             while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $row['tableno'] ?></td>
+                                    <td align="right"><?php echo $row['tableno'] ?></td>
                                     <td>
 
-                                        <button    <?php
+                                  <button    <?php
                         if ($row['status'] == 'RESERVED') {
                             echo "class='btn btn-danger'";
                         } else if ($row['status'] == 'VACANT') {

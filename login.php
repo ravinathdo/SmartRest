@@ -5,7 +5,7 @@ session_start();
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -179,7 +179,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Summer Sandwich</a></h4>
+                                <h4><a href="#">Summer Sandwich</a></h4>
                                 <span>29 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -195,7 +195,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">New Great Taste</a></h4>
+                                <h4><a href="#">New Great Taste</a></h4>
                                 <span>23 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -211,7 +211,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Spicy Pizza</a></h4>
+                                <h4><a href="#">Spicy Pizza</a></h4>
                                 <span>14 Sep 2084</span>
                             </div>
                             <div class="content-hide">
@@ -227,7 +227,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Healthy Food</a></h4>
+                                <h4><a href="#">Healthy Food</a></h4>
                                 <span>25 Aug 2084</span>
                             </div>
                             <div class="content-hide">
@@ -243,7 +243,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Great Breakfast</a></h4>
+                                <h4><a href="#">Great Breakfast</a></h4>
                                 <span>17 Aug 2084</span>
                             </div>
                             <div class="content-hide">
@@ -259,7 +259,7 @@ session_start();
                         </div>
                         <div class="blog-content">
                             <div class="content-show">
-                                <h4><a href="single-post.html">Fresh Fruit Juice</a></h4>
+                                <h4><a href="#">Fresh Fruit Juice</a></h4>
                                 <span>12 Aug 2084</span>
                             </div>
                             <div class="content-hide">

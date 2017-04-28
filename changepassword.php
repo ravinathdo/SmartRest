@@ -5,7 +5,7 @@ include_once './_function.php';
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 

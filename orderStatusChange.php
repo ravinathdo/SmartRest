@@ -4,7 +4,7 @@ session_start();
 ?>
 <head>
     <meta charset="utf-8">
-    <title>E-Restaurant</title>
+    <title>Restaurant</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
@@ -121,25 +121,29 @@ ON order_tbl.createduser = user.id  WHERE order_tbl.id = $orderID ";
 
 
 <div id="printDiv">
-<a href="#" onClick="printMe('printDiv')">Print</a>
+<a class="btn btn-link" href="#" onClick="printMe('printDiv')">Print</a>
+<div style="padding:10px;border: #666 solid 1">
+
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td><?php echo $row["id"]; ?></td>
-                                                <td><?php echo $row["totalamount"]; ?></td>
-                                                <td><?php echo $row["username"]; ?></td>
+                                                <td><h3>Order Number - <?php echo $row["id"]; ?></h3></td>
+                                                <td><h3> Amount - <?php echo $row["totalamount"]; ?></h3></td>
+                                                <td><h4> Customer - <?php echo $row["username"]; ?></h4></td>
                                             </tr>
                                             <tr>
                                                 <td>&nbsp;</td>
                                                 <td><?php echo $row["createddate"]; ?></td>
-                                                <td><?php echo $row["status"]; ?></td>
+                                                <td><h4><?php  if($row["takeaway"]!='NON'){ 
+												echo 'Address:'.$row["takeaway"];
+												} ?></h4></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="3">
                                                     <table width="100%" border="1" cellspacing="0" cellpadding="0">
                                                         <tr>
-                                                            <td width="32%">Item</td>
-                                                            <td width="22%">Qty</td>
-                                                            <td width="18%">Price</td>
+                                                            <td width="32%"><strong>Item</strong></td>
+                                                            <td width="22%"><strong>Qty</strong></td>
+                                                            <td width="18%"><strong>Price</strong></td>
                                                             <td width="28%">&nbsp;</td>
                                                         </tr>
 
@@ -176,7 +180,7 @@ WHERE orderitem.orderid = $id ";
                                             </tr>
                                         </table>
 </div>
-
+</div>
                                         <?php
                                     }
                                 } else {

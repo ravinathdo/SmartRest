@@ -5,7 +5,7 @@ session_start();
 <html>
     <head>
         <meta charset="utf-8">
-        <title>E-Restaurant</title>
+        <title>Restaurant</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -205,7 +205,7 @@ session_start();
                                 $to_date = $_POST['to'];
 
                                 $sql = "  SELECT * FROM tbl_reservation WHERE ('$from_date' BETWEEN from_time AND to_time)
- OR ( '$to_date' BETWEEN from_time AND to_time) AND STATUS = 'RSV' AND tableno = '$tableNo' ";
+ OR ( '$to_date' BETWEEN from_time AND to_time) AND status = 'RSV' AND tableno = '$tableNo' ";
 
                                
                                 $result = mysqli_query($conn, $sql);
@@ -231,7 +231,7 @@ session_start();
 
 <?php
 if (isset($_GET['rsvid'])) {
-    $sql = "UPDATE tbl_reservation SET STATUS='CSL' WHERE id='" . $_GET['rsvid'] . "'";
+    $sql = "UPDATE tbl_reservation SET status='CSL' WHERE id='" . $_GET['rsvid'] . "'";
 
     if (mysqli_query($conn, $sql)) {
          echo '<div class="msgCenter">
@@ -264,7 +264,7 @@ if (!$conn) {
 }
 
 $sql = "
- SELECT T.*,status.description FROM tbl_reservation AS T INNER JOIN STATUS ON T.status = status.code
+ SELECT T.*,status.description FROM tbl_reservation AS T INNER JOIN status ON T.status = status.code
  WHERE T.usercreated = '" . $_SESSION['user_id'] . "' AND T.status = 'BUK' ORDER BY id DESC ";
 
 $result = mysqli_query($conn, $sql);
