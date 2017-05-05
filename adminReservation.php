@@ -142,7 +142,7 @@ echo '</script>';
                                                 <td><?php echo $row["tableno"] ?></td>
                                                 <td><?php echo $row["from_time"] ?></td>
                                                 <td><?php echo $row["to_time"] ?></td>
-                                                <td><a href="adminReservation.php?rsvid=<?php echo $row["id"] ?>">close</a></td>
+                                                <td><a class="btn btn-primary" href="adminReservation.php?rsvid=<?php echo $row["id"] ?>">close</a></td>
                                             </tr>
                                             <?php
                                         }
@@ -179,7 +179,7 @@ echo '</script>';
  INNER JOIN status ON T.status = status.code
  INNER JOIN user ON T.usercreated = user.id WHERE t.status != 'BUK' ORDER BY T.id DESC  ";
 
-echo  $sql;
+//echo  $sql;
                                     $result = mysqli_query($conn, $sql);
 
                                     if (mysqli_num_rows($result) > 0) {
