@@ -20,29 +20,26 @@ include_once './_function.php';
 </head>
 <body>
 
-    <header>
-        <div id="top-header">
-            <?php include './top_header.php'; ?>
-        </div>
-        <div id="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="logo">
-                            <a href="#"><img src="images/logo.png" title="Grill Template" alt="Grill Website Template" ></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="main-menu">
-                            <?php include './menu.php'; ?>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+   <header>
+      <div id="main-header" >
+          <div class="container">
+           <?php include './top_header.php'; ?>
 
+            
+            
+                <div class="row">
+                    <div id="menuDiv">
+                    <center>
+                   <?php
+                            include './menu.php';
+                            ?>
+                      </center>
                     </div>
+                  
                 </div>
-            </div>
+
         </div>
+      </div>
     </header>
 
     <div id="services">
